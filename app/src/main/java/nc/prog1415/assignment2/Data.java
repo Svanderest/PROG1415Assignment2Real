@@ -1,5 +1,13 @@
 package nc.prog1415.assignment2;
 
 public class Data {
-    int difficutly = 0;
+    public boolean switchIsOn;
+    public int radioState;
+    public String name;
+
+    public Data()
+    {
+        switchIsOn = true;
+    }
+
 }

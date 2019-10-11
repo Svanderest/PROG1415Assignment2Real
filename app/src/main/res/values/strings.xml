@@ -3,4 +3,10 @@
     <string name="OptionsButton">Options</string>
     <string name="SwitchOn">Switch is on</string>
     <string name="SwitchOff">Switch is off</string>
+    <string name="RadioLabel">Radio Buttons</string>
+    <string name="Radio1">1</string>
+    <string name="Radio2">2</string>
+    <string name="Radio3">3</string>
+    <string name="Radio4">4</string>
+    <string name="textName">Name</string>
 </resources>

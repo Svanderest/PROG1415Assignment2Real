@@ -3,8 +3,12 @@ package nc.prog1415.assignment2;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.SeekBar;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -41,9 +45,74 @@ public class InputActivity extends Activity {
             @Override
             public void onFocusChange(View view, boolean b) {
                     if(!b)
-                    {
                         Toast.makeText(InputActivity.this, ((TextView)view).getText(), Toast.LENGTH_SHORT).show();
-                    }
+                    else
+                        ((TextView)view).setText("");
+            }
+        });
+
+        final CheckBox cb = (CheckBox)this.findViewById(R.id.checkBox);
+        cb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                inputData.checkState = b;
+                cb.setText(b ? R.string.checkedYes : R.string.checkedNo);
+            }
+        });
+
+        final SeekBar sb = (SeekBar)this.findViewById(R.id.seekBar);
+        sb.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+                String displayText = String.format(getResources().getString(R.string.startSlide),seekBar.getProgress());
+                Toast.makeText(InputActivity.this, displayText, Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                String displayText = String.format(getResources().getString(R.string.endSlide),seekBar.getProgress());
+                Toast.makeText(InputActivity.this, displayText, Toast.LENGTH_SHORT).show();
+                inputData.sliderPosition = seekBar.getProgress();
+            }
+        });
+
+        //This control is an intetionally useless take on Xeno's paradox
+        SeekBar xeno = (SeekBar)this.findViewById(R.id.xenoSeekBar);
+        xeno.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                int max = seekBar.getMax();
+                if(seekBar.getProgress() == max) {
+                    seekBar.setMax(max * 2);
+                    inputData.xeno = seekBar.getMax();
+                    String displayText = getResources().getString(R.string.Xeno);
+                    Toast.makeText(InputActivity.this, displayText, Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        final Button btn = (Button)this.findViewById(R.id.counterButton);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                inputData.clickCounter++;
+                String displayText = String.format(getResources().getString(R.string.ButtonTemplate),inputData.clickCounter);
+                Toast.makeText(InputActivity.this, displayText, Toast.LENGTH_SHORT).show();
             }
         });
     }

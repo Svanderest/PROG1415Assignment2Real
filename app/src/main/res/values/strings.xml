@@ -9,4 +9,11 @@
     <string name="Radio3">3</string>
     <string name="Radio4">4</string>
     <string name="textName">Name</string>
+    <string name="checkedNo">Box is not checked</string>
+    <string name="checkedYes">Box is checked</string>
+    <string name="startSlide">Start slide at position %d</string>
+    <string name="endSlide">Saved slide at position %d</string>
+    <string name="ButtonLabel">Click Me</string>
+    <string name="ButtonTemplate">You have clicked this button %d times</string>
+    <string name="Xeno">Xeno: To Reach the end you must first get half way there</string>
 </resources>

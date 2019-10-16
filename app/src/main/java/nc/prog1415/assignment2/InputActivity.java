@@ -6,8 +6,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.RatingBar;
 import android.widget.SeekBar;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -103,6 +105,15 @@ public class InputActivity extends Activity {
                     String displayText = getResources().getString(R.string.Xeno);
                     Toast.makeText(InputActivity.this, displayText, Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+
+        final RatingBar rb = (RatingBar)this.findViewById(R.id.ratingBar);
+        rb.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+            @Override
+            public void onRatingChanged(RatingBar ratingBar, float v, boolean b) {
+                inputData.stars = v;
+                Toast.makeText(InputActivity.this, String.format(getResources().getString(R.string.Stars),v), Toast.LENGTH_SHORT).show();
             }
         });
 

@@ -10,13 +10,29 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#FBFBFB"
         android:gravity="center"
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/optionsButton"
-            android:layout_width="wrap_content"
+            android:id="@+id/imageButton"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#FBFBFB"
+            android:text="@string/ImageButton" />
+
+        <Button
+            android:id="@+id/optionsButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FBFBFB"
             android:text="@string/OptionsButton" />
+
+        <Button
+            android:id="@+id/soundButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FBFBFB"
+            android:text="@string/SoundButton" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

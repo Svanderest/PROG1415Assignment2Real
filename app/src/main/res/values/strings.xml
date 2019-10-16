@@ -16,4 +16,10 @@
     <string name="ButtonLabel">Click Me</string>
     <string name="ButtonTemplate">You have clicked this button %d times</string>
     <string name="Xeno">Xeno: To Reach the end you must first get half way there</string>
+    <string name="Stars">You\'ve selected %f stars</string>
+    <string name="ImageButton">Image</string>
+    <string name="Attribution">Starfield image CC-BY-2.0 user Filter Forge on flickr</string>
+    <string name="backBtn">Back</string>
+    <string name="SoundButton">Sound</string>
+    <string name="PlayButton">Play</string>
 </resources>

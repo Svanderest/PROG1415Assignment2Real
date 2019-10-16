@@ -8,6 +8,7 @@ public class Data {
     public int sliderPosition;
     public int clickCounter;
     public int xeno;
+    public float stars;
 
     public Data()
     {

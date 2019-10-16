@@ -28,7 +28,7 @@ public class ThirdActivity extends Activity {
         playButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                MediaPlayer mp = MediaPlayer.create(ThirdActivity.this, R.raw.deepspace);
+                MediaPlayer mp = MediaPlayer.create(ThirdActivity.this, R.raw.notify);
                 mp.start();
             }
         });
